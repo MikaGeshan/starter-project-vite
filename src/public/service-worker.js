@@ -170,7 +170,6 @@ function deleteFromOutbox(db, key) {
 }
 
 self.addEventListener('push', (event) => {
-...
   console.log('[Service Worker] Push Received.');
 
   const data = event.data ? event.data.json() : {};
