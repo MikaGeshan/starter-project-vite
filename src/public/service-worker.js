@@ -1,10 +1,10 @@
 const CACHE_NAME = 'story-app-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/favicon.png',
-  '/images/logo.png',
-  '/manifest.json',
+  './',
+  'index.html',
+  'favicon.png',
+  'images/logo.png',
+  'manifest.json',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
 ];
@@ -87,7 +87,7 @@ self.addEventListener('fetch', (event) => {
       }).catch(() => {
         // Offline fallback for navigation
         if (request.mode === 'navigate') {
-          return caches.match('/index.html');
+          return caches.match('index.html');
         }
       });
     })
@@ -177,8 +177,8 @@ self.addEventListener('push', (event) => {
   const title = data.title || 'New Notification';
   const options = {
     body: data.options?.body || 'You have a new message.',
-    icon: data.options?.icon || '/favicon.png',
-    badge: data.options?.badge || '/favicon.png',
+    icon: data.options?.icon || 'favicon.png',
+    badge: data.options?.badge || 'favicon.png',
     data: data.options?.data || {},
     actions: [
       {
@@ -199,12 +199,12 @@ self.addEventListener('notificationclick', (event) => {
 
   // Extract story ID from data.url if it exists
   // Example URL: https://story-api.dicoding.dev/v1/stories/story-id
-  let targetUrl = '/#/';
+  let targetUrl = './#/';
   if (notification.data && notification.data.url) {
     const segments = notification.data.url.split('/');
     const storyId = segments[segments.length - 1];
     if (storyId) {
-      targetUrl = `/#/detail/${storyId}`;
+      targetUrl = `./#/detail/${storyId}`;
     }
   }
 
