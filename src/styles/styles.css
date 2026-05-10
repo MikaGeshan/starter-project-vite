@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: lightskyblue;
+  --color-primary-dark: #87ceeb;
+}
+
+/* Custom View Transitions - Keep these as they are not easily handled by pure Tailwind */
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes slide-from-right {
+  from { transform: translateX(30px); }
+}
+
+@keyframes slide-to-left {
+  to { transform: translateX(-30px); }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+/* Leaflet Overrides to match theme */
+.leaflet-container {
+  font-family: inherit;
+}
+
+.map-popup img {
+  @apply rounded-t-lg mb-2 w-full object-cover h-32;
+}
+
+.map-popup h4 {
+  @apply font-bold text-gray-800 m-0;
+}
+
+.map-popup p {
+  @apply text-xs text-gray-600 mt-1 line-clamp-2;
+}

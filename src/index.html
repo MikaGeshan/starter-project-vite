@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+    <title>StoryApp - Berbagi Cerita</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script type="module" src="/scripts/index.js"></script>
+  </head>
+  <body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
+    <a href="#main-content" class="skip-to-content bg-blue-600 text-white px-4 py-2 rounded-b-xl font-bold absolute left-1/2 -translate-x-1/2 -translate-y-full focus:translate-y-0 transition-transform z-[10001]">Skip to Content</a>
+    <header class="bg-primary shadow-md sticky top-0 z-[1000] transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a class="flex items-center group" href="#/" aria-label="StoryApp Home">
+            <span class="text-2xl font-black tracking-tighter text-gray-900 group-hover:text-blue-700 transition-colors">StoryApp</span>
+          </a>
+
+          <nav id="navigation-drawer" class="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl transform -translate-x-full transition-transform duration-350 ease-in-out z-[9999] lg:static lg:w-auto lg:bg-transparent lg:shadow-none lg:translate-x-0">
+            <ul id="nav-list" class="flex flex-col lg:flex-row gap-2 lg:gap-1 p-8 lg:p-0">
+              <li><a class="px-4 py-2 rounded-xl text-gray-800 font-bold hover:bg-white/40 lg:hover:bg-black/5 transition-all block" href="#/">Beranda</a></li>
+              <li><a class="px-4 py-2 rounded-xl text-gray-800 font-bold hover:bg-white/40 lg:hover:bg-black/5 transition-all block" href="#/about">About</a></li>
+              <li><a class="px-4 py-2 rounded-xl text-gray-800 font-bold hover:bg-white/40 lg:hover:bg-black/5 transition-all block" href="#/register">Register</a></li>
+              <li><a class="px-6 py-2 ml-0 lg:ml-4 rounded-full bg-gray-900 text-white font-bold hover:bg-gray-800 hover:scale-105 active:scale-95 transition-all block text-center shadow-lg" href="#/login">Login</a></li>
+            </ul>
+          </nav>
+
+          <button id="drawer-button" class="lg:hidden p-2 rounded-xl hover:bg-white/40 transition-colors text-2xl" aria-label="Menu" aria-controls="navigation-drawer" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[calc(100vh-80px)]"></main>
+  </body>
+</html>

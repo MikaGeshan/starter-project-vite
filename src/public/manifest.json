@@ -1,0 +1,55 @@
+{
+  "name": "StoryApp - Berbagi Cerita",
+  "short_name": "StoryApp",
+  "description": "Aplikasi berbagi cerita dari berbagai lokasi di Indonesia",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tampilan Utama StoryApp"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tampilan Mobile StoryApp"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tambah Cerita",
+      "url": "/#/add",
+      "icons": [
+        {
+          "src": "/favicon.png",
+          "sizes": "64x64"
+        }
+      ]
+    }
+  ]
+}
