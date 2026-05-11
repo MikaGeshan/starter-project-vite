@@ -201,6 +201,7 @@ self.addEventListener('push', (event) => {
   };
 
   console.log('[Service Worker] Showing notification:', title, options);
+  console.log('[Service Worker] Notification permission:', Notification.permission);
 
   event.waitUntil(
     self.registration.showNotification(title, options)
