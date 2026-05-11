@@ -4,7 +4,11 @@ import { postSubscribeNotification, deleteUnsubscribeNotification } from '../dat
 const NotificationHelper = {
   async sendSubscriptionToServer(subscription) {
     try {
-      const response = await postSubscribeNotification(subscription);
+      // API Dicoding does not allow "expirationTime" field
+      const subscriptionData = JSON.parse(JSON.stringify(subscription));
+      delete subscriptionData.expirationTime;
+
+      const response = await postSubscribeNotification(subscriptionData);
       console.log('Successfully subscribed to push notifications:', response);
     } catch (error) {
       console.error('Failed to subscribe to push notifications:', error);

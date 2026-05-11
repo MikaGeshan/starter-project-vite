@@ -200,7 +200,14 @@ self.addEventListener('push', (event) => {
     ],
   };
 
-  event.waitUntil(self.registration.showNotification(title, options));
+  console.log('[Service Worker] Showing notification:', title, options);
+  console.log('[Service Worker] Notification permission:', Notification.permission);
+
+  event.waitUntil(
+    self.registration.showNotification(title, options)
+      .then(() => console.log('[Service Worker] showNotification successful'))
+      .catch((err) => console.error('[Service Worker] showNotification failed:', err))
+  );
 });
 
 self.addEventListener('notificationclick', (event) => {
