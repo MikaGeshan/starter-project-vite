@@ -8,6 +8,7 @@ class FavoriteView {
             <p class="text-gray-500 font-medium">Koleksi cerita yang Anda simpan secara lokal.</p>
           </div>
           <div class="relative w-full md:w-80">
+            <label for="search-favorite" class="sr-only">Cari cerita favorit</label>
             <input type="text" id="search-favorite" placeholder="Cari cerita favorit..." class="w-full px-6 py-3 rounded-2xl border border-gray-100 bg-white shadow-sm focus:ring-4 focus:ring-blue-100 focus:border-blue-400 outline-none transition-all font-medium">
             <span class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
           </div>

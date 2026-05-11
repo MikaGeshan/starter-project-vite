@@ -81,10 +81,10 @@ export async function postSubscribeNotification(subscription) {
   return await response.json();
 }
 
-export async function postUnsubscribeNotification(endpoint) {
+export async function deleteUnsubscribeNotification(endpoint) {
   const token = localStorage.getItem('user_token');
   const response = await fetch(ENDPOINTS.NOTIFICATIONS_UNSUBSCRIBE, {
-    method: 'POST',
+    method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,

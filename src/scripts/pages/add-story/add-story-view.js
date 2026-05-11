@@ -20,10 +20,10 @@ class AddStoryView {
             </div>
 
             <div class="space-y-4">
-              <label class="text-lg font-black text-gray-900 flex items-center gap-2">
+              <h2 class="text-lg font-black text-gray-900 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">2</span>
                 Tambahkan Foto
-              </label>
+              </h2>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="relative group">
@@ -58,10 +58,10 @@ class AddStoryView {
 
           <div class="space-y-8">
             <div class="space-y-4">
-              <label class="text-lg font-black text-gray-900 flex items-center gap-2">
+              <h2 class="text-lg font-black text-gray-900 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">3</span>
                 Pilih Lokasi
-              </label>
+              </h2>
               <p class="text-sm text-gray-500 font-medium">Klik pada peta untuk menandai lokasi ceritamu.</p>
               
               <div id="map-add" class="w-full h-[400px] rounded-[2rem] shadow-xl border-8 border-white z-0" role="application" aria-label="Peta interaktif untuk memilih lokasi"></div>

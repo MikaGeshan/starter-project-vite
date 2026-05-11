@@ -1,5 +1,5 @@
 import CONFIG from '../config';
-import { postSubscribeNotification, postUnsubscribeNotification } from '../data/api';
+import { postSubscribeNotification, deleteUnsubscribeNotification } from '../data/api';
 
 const NotificationHelper = {
   async sendSubscriptionToServer(subscription) {
@@ -13,7 +13,7 @@ const NotificationHelper = {
 
   async sendUnsubscriptionToServer(endpoint) {
     try {
-      const response = await postUnsubscribeNotification(endpoint);
+      const response = await deleteUnsubscribeNotification(endpoint);
       console.log('Successfully unsubscribed from push notifications:', response);
     } catch (error) {
       console.error('Failed to unsubscribe from push notifications:', error);
