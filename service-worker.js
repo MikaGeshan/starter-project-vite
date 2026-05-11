@@ -172,7 +172,20 @@ function deleteFromOutbox(db, key) {
 self.addEventListener('push', (event) => {
   console.log('[Service Worker] Push Received.');
 
-  const data = event.data ? event.data.json() : {};
+  let data;
+  try {
+    const textData = event.data ? event.data.text() : '';
+    data = JSON.parse(textData);
+  } catch (error) {
+    console.warn('[Service Worker] Push data is not valid JSON, using as text:', error);
+    data = {
+      title: 'New Notification',
+      options: {
+        body: event.data ? event.data.text() : 'You have a new message.',
+      },
+    };
+  }
+
   const title = data.title || 'New Notification';
   const options = {
     body: data.options?.body || 'You have a new message.',
